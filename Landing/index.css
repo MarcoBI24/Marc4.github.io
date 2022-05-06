@@ -1,0 +1,573 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--fuente);
+}
+:root{
+    --fuente: "Roboto";
+    --color-titulo:#ffca08;
+    --color-fondo: linear-gradient(to bottom,#4D8487,#48797D,#4D8487 );
+}
+/* CONTENEDOR GENERAL */
+.contenedor-general{
+    width: 100%;
+    background-color: antiquewhite;
+}
+/* CONTENEDOR DEL HEADER COMPLETO */
+.contenedor-header{
+    width: 100%;
+    height: 100px;
+
+    background: rgb(0, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.contenedor_header-logo{
+    transform: translate(
+        30px
+    );
+    height: 100%;
+}
+.logo{
+    height: 100%;
+}
+.contenedor_header-nav{
+    transform: translate(-50px) scale(2);
+}
+.contenedor_nav-icon{
+
+    color: #ffca08;
+}
+.contenedor_nav-ul{
+    display: none;
+}
+/* fin imagenes pequeñas por el momento */
+
+
+
+/* CONTENEDOR MAIN - 1 */
+.contenedor-main-1{
+    background: var(--color-fondo);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/* contenedor del modelo que esta dentro de contenedor main */
+.contenedor_main-modelo{
+    width: 100%;
+    flex: 0 2 800px;
+}
+.modelo-img{
+    object-fit: cover;
+    width: 100%;
+    filter: grayscale(0);
+    height: 100vh;
+    transition: filter 0.3s ease-out, transform 1s ease;
+    transition-delay: 1s;
+}
+
+.modelo-img:hover{
+    transform: scale(0.9);
+    filter: grayscale();
+}
+/* contenedor section que esta dentro del contenedor main */
+.contenedor_main-section{
+    width:100%;
+    flex: 1 2 200px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px 50px;
+}
+.contenedor_section-titulo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.running-icon{
+    position: relative;
+    animation-name: running;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes running {
+    0%{
+        left: 0px;
+        text-shadow: -3px 0px 2px white;
+    }
+    50%{
+        transform: translateX(80%);
+        
+    }
+    100%{
+        text-shadow: -5px 0px 2px rgb(107, 107, 107);
+        transform: translate(-14px)  rotateX(0deg) rotateY(180deg);
+    }
+}
+.titulo{
+    font-size: 45px;
+    font-family: "Roboto";
+    color: var(--color-titulo);
+    line-height: 60px;
+    font-weight: 500;
+    letter-spacing: 11px;
+}
+@media screen and (max-width:400px) {
+    .titulo{
+        font-size: 35px;
+    }
+}
+.descuento{
+    color: #fff;
+    line-height: 20px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+b{
+    color: #ffca08;
+}
+.contenedor_section-inputs{
+    height: min-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.contenedor-input-nombre{
+    display: flex;
+    position: relative;
+    flex: 1 1 100% ;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.contenedor-input-correo{
+    flex: 1 1 100%;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+.terminos{
+    display: flex;
+    gap: 10px;
+}
+.box-check:checked{
+    width: 50px;
+    background-color: #ffca08;
+    outline: none;
+}
+.input-nombre{
+
+    height: 50px;
+    width: 100%;
+    max-width: 70%;
+    background-color: black;
+    color: #48797D;
+    position: relative;
+
+    font-family: "Roboto";
+    font-size: 30px;
+    font-weight: 300;
+    font-style: italic;
+    outline:none;
+    padding:10px;
+    border-style: solid ;
+    border: none;
+    box-shadow: 0px 0px 0px 5px #48797D, 6px 5px 0px 1px #ffca08;
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.input-correo{
+    height: 50px;
+    
+    width: 100%;
+    max-width: 70%;
+    background-color: black;
+    color: #ffca08;
+    font-family: "Roboto";
+    font-size: 30px;
+    font-weight: 300;
+    font-style: italic;
+    outline:none;
+    padding:10px;
+    border-style: solid ;
+    border: none;
+    box-shadow: 0px 0px 0px 5px #48797D, 6px 5px 0px 1px #ffca08;
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.contenedor_section-btn{
+
+}
+
+
+.btn-comprar{
+    background-color: black;
+    color: #ffca08;
+    padding: 20px 40px;
+    font-size: 30px;
+    border: 0px solid;
+    font-family: "Roboto";
+    font-weight: 800;
+    transform: none;
+    font-style: italic;
+    box-shadow: 0px 0px 0px 5px #48797D, 6px 5px 0px 2px #ffca08;
+    transition: box-shadow 0.5s ease-in-out, transform 0.5s;
+}
+.btn-comprar:hover{
+    transform: scale(0.9);
+    box-shadow: 2px 2px 0px 2px #ffca08, 3px 2px 0px 2px #ffca08;
+}
+.input-correo:focus, .input-nombre:focus{
+    box-shadow: 2px 2px 0px 2px #ffca08, 4px 4px 0px 2px #ffca08;
+
+}
+/* contenedor main - 2 */
+.contenedor-main-2{
+    
+    height: 100vh;
+    background-color: #E0CF5C;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+.contenedor_main-subtitulo{
+    padding: 20px 0px;
+}
+.subtitulo{
+    text-align: center;
+    font-size: 58px;
+    letter-spacing: 20px;
+    font-weight: 500;
+}
+.contenedor_main-zapatillas{
+    width: 100%;
+    max-width: 900px;
+    align-self: center;
+    position: relative;
+    overflow: hidden;
+}
+.contenedor_zapatillas-slider{
+    display: flex;
+    width: 500%;
+    margin-left: -100%;
+} 
+.contenedor-zapatilla{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.contenedor_zapatilla-img{
+    width: 100%;
+    max-width: 280px;
+}
+.zapatilla{
+    width: 100%;
+}
+.contenedor_zapatilla-modelo{
+    width: 280px;
+    background-color: #c4c4c4;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px;
+    gap: 10px;
+    align-items: center;
+}
+.nombre{
+    align-self: flex-start;
+    font-weight: 300;
+    font-size: 22px;
+    
+}
+.original{
+    align-self: flex-start;
+    color: #6c6c6c;
+    font-weight: 300;
+    font-size: 18px;
+}
+.envio{
+    align-self: flex-start;
+    font-weight: 300;
+    font-size: 23px;
+    font-style: italic;
+
+}
+.precio{
+
+    font-weight: bold;
+    letter-spacing: 6px;
+    font-size: 30px;
+    align-self: center;
+
+}
+
+.btn-comprar-zapatilla{
+        background-color: black;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: 0px solid;
+        font-family: "Roboto";
+        font-weight: 800;
+        transform: none;
+        font-style: italic;
+
+        box-shadow: 0px 0px 0px 3px #c4c4c4, 6px 5px 0px 2px #000;
+        transition: box-shadow 0.5s ease-in-out, transform 0.5s;
+
+}
+.btn-comprar-zapatilla:hover{
+        transform: scale(0.9);
+        box-shadow: 2px 2px 0px 2px #fff, 3px 2px 0px 2px #fff;
+    }
+.slider-btn{
+    color: #000;
+
+    position: absolute;
+    top: 50%;
+    text-align: center;
+}
+.left{
+    left: 20px;
+}
+.right{
+    right: 20px;
+}
+
+.icon-left{
+    font-size: 50px;
+    transform: rotate(-180deg);
+}
+
+.icon-right{
+    font-size: 50px;
+}
+.icon-left:focus, .icon-right:focus{
+    text-shadow: 0px 0px 5px #000;
+
+}
+/* comienzo del main - 3 */
+.contenedor-main-3{
+    padding: 50px;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+
+/*hijo directo de main - subtitulo */
+.contenedor_main-subtitulo2{
+    color: #fff;
+    font-size: 35px;
+    width: 100%;
+    flex: 1 1;
+    line-height: 80px;
+}
+/* hijo directo -> contendor de exclusivas */
+.contenedor_main-exclusivas{
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+/* hijos modelos  -> 4*/
+.contenedor-slider{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    width: 500%;
+    margin-left: -100%;
+}
+.contenedor-slider_section-modelo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+/* hijos de contenedor-modelo */
+.contenedor_modelo-img{
+    border: 1px solid ;
+    max-width: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.exclusiva-img{
+    width: 100%;
+    margin: auto;
+    object-fit: cover;
+    transition: transform 3s;
+    transition-delay: 1.5s ;
+}
+.exclusiva-img:hover{
+
+    transform: scaleX(1.2) scaleY(1.4);
+}
+ /*hijo 2 contenedor de los modelos */
+.contenedor_modelo-descripcion{
+    width: 100%;
+    max-width: 350px;
+    padding: 10px 0px;
+}
+.descripcion{
+    
+     display: flex;
+    flex-direction: column;
+    color: #fff;
+    gap: 10px;
+}
+
+.descripcion-title{
+    font-size: 30px;
+    font-weight: 600;
+}
+.descripcion-descripcion{
+    font-size: 19px;
+    font-weight: 300;
+    
+}   
+
+/* botones para el slider */
+.btn-left{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+}
+.btn-right{
+    width: 40px ;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+}
+
+.icon-btnLeft{
+    font-size: 50px;
+    color: white;
+    transform: rotate(-180deg);
+}
+.icon-btnRight{
+    color: white;
+    font-size: 50px;
+
+}
+/* contenedor footer */
+.contenedor-footer{
+    background-color: #3c3c3c;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    
+}
+.contenedor_footer-año{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.country{
+    flex-basis: 40%;
+
+    font-size: 18px;
+    font-weight: 700;
+
+}
+.bandera{
+    flex-basis: 40%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+
+    
+}
+.fondo-rojo{
+
+    width: 80%;
+    height: 50%;
+    background-color: #c22d00;
+}
+.raya-blanca{
+    margin: auto;
+    width: 35%;
+    height: 100%;
+    background-color: #fff;
+}
+.contenedor_footer-productos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;    
+}
+.contenedor-lista-info{
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+}
+.lista-info{
+    list-style: none;
+
+}
+.info{
+    font-size: 17px;
+    font-style: oblique;
+    text-align: center;
+}
+.info:hover{
+    cursor: pointer;
+    font-weight: 700;
+}
+.footer-subtitulo{
+
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-align: center;
+}
+.contenedor_footer-asistencia{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
+.contenedor_footer-informacionEmpresa{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
